@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## tl;dr
 
 ```sh
-https://github.com/pierrepln/recruitment-test-donations.git && cd recruitment-test-donations
+git clone https://github.com/pierrepln/recruitment-test-donations.git && cd recruitment-test-donations
 npm i
 npm start
 ```
