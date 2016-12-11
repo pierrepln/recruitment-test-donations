@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
-import Request from 'react-http-request';
+import 'whatwg-fetch';
 import './App.css';
 
 class Charity extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: '',
+      logo: ''
+     };
+  }
+
+  componentWillMount() {
+    const self = this;
     const appId = '82d17467';
     const charityId = '2357';
-    const urlInfo = `https://api.justgiving.com/${appId}/v1/charity/${charityId}`;
+    const API_ENDPOINT = `https://api.justgiving.com/${appId}/v1/charity/${charityId}`;
+    const options = { headers: {"Content-Type": "application/json"} };
+
+    fetch(API_ENDPOINT, options)
+    .then(function(response) {
+      return response.text();
+    }).then(function(text) {
+      const data = JSON.parse(text);
+      self.setState({
+        description: data.description,
+        logo: data.logoAbsoluteUrl
+      });
+    });
+  }
+
+  renderCharityLogo() {
+    if (this.state.logo)
+      return (<img src={ this.state.logo } className="charity-logo" alt="logo" />);
+  }
+
+  render() {
     return (
       <div className="charity-wrapper">
-        <Request
-          url={ urlInfo } method='get' accept='application/json' verbose={ true } >
-          {
-            ({error, result, loading}) => {
-              if (loading) {
-                return <div>loading...</div>;
-              } else {
-                return <div>{ result.text }</div>;
-              }
-            }
-          }
-        </Request>
+        { this.renderCharityLogo() }
+        <div>{ this.state.description }</div>
       </div>
     );
   }
