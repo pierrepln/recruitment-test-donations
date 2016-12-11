@@ -29,10 +29,8 @@ class Donations extends Component {
   renderDonation(donation) {
     return (
       <div className="donation">
-        <div>amount { donation.amount }</div>
-        <div>currencyCode { donation.currencyCode }</div>
-        <div>donationDate { donation.donationDate }</div>
-        <div>donorDisplayName { donation.donorDisplayName }</div>
+        <div>{ donation.donorDisplayName }</div>
+        <div>{ donation.amount } { donation.currencyCode }</div>
       </div>
     );
   }
@@ -44,14 +42,15 @@ class Donations extends Component {
         <div>
           <h3>Lastest Donations</h3>
           <ul>
-            {this.state.donations.map(function(donation) {
-              return (<li>{ self.renderDonation(donation) }</li>);
+            {this.state.donations.map(function(donation, key) {
+              return (<li key={ key }>{ self.renderDonation(donation) }</li>);
             })}
           </ul>
         </div>
       );
     }
   }
+
 
   render() {
     return (
@@ -60,6 +59,7 @@ class Donations extends Component {
       </div>
     );
   }
+
 }
 
 export default Donations;

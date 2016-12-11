@@ -35,14 +35,16 @@ class Charity extends Component {
       return (<img src={ this.state.logo } className="charity-logo" alt="logo" />);
   }
 
+
   render() {
     return (
       <div className="charity-wrapper">
         { this.renderCharityLogo() }
-        <div>{ this.state.description }</div>
+        <div className="charity-description">{ this.state.description }</div>
       </div>
     );
   }
+
 }
 
 export default Charity;
