@@ -9,10 +9,6 @@ class Charity extends Component {
     const urlInfo = `https://api.justgiving.com/${appId}/v1/charity/${charityId}`;
     return (
       <div className="charity-wrapper">
-        <p className="App-intro">
-          To get started, select a charity in the list below.
-        </p>
-        <p>charityId: { charityId }</p>
         <Request
           url={ urlInfo } method='get' accept='application/json' verbose={ true } >
           {
