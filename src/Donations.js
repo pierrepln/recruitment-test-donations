@@ -9,7 +9,7 @@ class Donations extends Component {
     const urlDonations = `https://api.justgiving.com/${appId}/v1/charity/${charityId}/donations`;
     return (
       <div className="donations-wrapper">
-        <h3>Lastest Donation</h3>
+        <h3>Lastest Donations</h3>
         <Request
           url={ urlDonations } method='get' accept='application/json' verbose={ true } >
           {
