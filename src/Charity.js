@@ -39,6 +39,7 @@ class Charity extends Component {
   render() {
     return (
       <div className="charity-wrapper">
+        <h3>Charity</h3>
         { this.renderCharityLogo() }
         <div className="charity-description">{ this.state.description }</div>
       </div>

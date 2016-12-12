@@ -1,14 +1,28 @@
+body {
+  background-color: #ac29b5;
+  min-height: 100vh;
+  font-size: 18px;
+  line-height: 1.55555555555556;
+  color: #262626;
+}
+
 .App {
   text-align: center;
 }
 .App-header {
-  background-color: #222;
+  background-color: rgba(22, 22, 22, 0.66);
   padding: 20px;
   color: white;
+  text-shadow: 1px 1px black;
 }
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  position: absolute;
+  top: 0px;
+  left: 40vw;
+  width: 20vw;
+  z-index: -1;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -20,19 +34,26 @@
 
 .wrapper {
   display: flex;
-  margin-top: 100px;
+  margin: 80px auto;
 }
 
-.charity-wrapper {
-  width: 50vw;
+.charity-wrapper,
+.donations-wrapper {
+  width: 36vw;
+  margin: 0 7vw;
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: -8px 8px 0 0 #7d1085;
+  -webkit-box-shadow: -8px 8px 0 0 #7d1085;
+}
+.charity-wrapper img {
+  max-width: 260px;
 }
 .charity-wrapper .charity-description {
-  width: 30em;
-  margin: 0 auto;
-}
-
-.donations-wrapper {
-  width: 50vw;
+  margin: 15px 50px 30px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #525252;
 }
 .donations-wrapper ul {
   list-style-type: none;
@@ -40,5 +61,8 @@
   margin: 0;
 }
 .donations-wrapper ul li {
-  margin: 30px auto;
+  margin: 30px;
+  border-radius: 5px;
+  background-color: beige;
+  color: #525252;
 }

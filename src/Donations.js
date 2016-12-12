@@ -26,11 +26,15 @@ class Donations extends Component {
     });
   }
 
+  renderAmount(amount) {
+    if (amount)
+      return (<div>£{ amount }</div>);
+  }
+
   renderDonation(donation) {
     return (
       <div className="donation">
-        <div>{ donation.donorDisplayName }</div>
-        <div>{ donation.amount } { donation.currencyCode }</div>
+        <div>{ this.renderAmount(donation.amount) }{ donation.donorDisplayName }</div>
       </div>
     );
   }
