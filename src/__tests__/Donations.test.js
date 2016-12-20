@@ -8,3 +8,5 @@ describe('Donations Component', function () {
     shallow(<Donations />);
   });
 });
+
+// TODO: Add component state tests (dry and hydrated)

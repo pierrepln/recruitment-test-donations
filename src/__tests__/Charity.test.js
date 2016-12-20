@@ -13,3 +13,5 @@ describe('Charity Component', function () {
     expect(wrapper.contains(title)).toEqual(true);
   });
 });
+
+// TODO: Add component state tests (dry and hydrated)

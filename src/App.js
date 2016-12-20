@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Charity from './Charity';
 import Donations from './Donations';
+import Campaign from './Campaign';
 import './App.css';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
         <div className="wrapper">
           <Charity />
           <Donations />
+          <Campaign />
         </div>
       </div>
     );
